@@ -12,6 +12,7 @@ import { setFromDictionary, compareDates } from '@/helpers'
 
 // types
 import { Column, Filter } from '@/interfaces'
+import Operation from '@/models/Operation'
 
 // components
 import TableColumn from './TableColumn'
@@ -34,7 +35,7 @@ import AppPreloader from '@/components/AppPreloader'
 export default class AppTable extends Vue {
   @Prop() cols!: Column[]
   @Prop() filters!: Filter[]
-  @Prop() rows!: object[]
+  @Prop() rows!: Operation[]
   @Prop() icons!: object
   @Prop() indicators!: object
 
@@ -76,10 +77,10 @@ export default class AppTable extends Vue {
   sortRows(col: Column): void {
     if (col.sorted) {
       this.tableRows.sort((a, b) => {
-        if (col.key === 'date' && col.sorted) {
+        if (col.key === 'date') {
           return compareDates(a[col.key], b[col.key])
         }
-        if (col.dictionary && col.sorted) {
+        if (col.dictionary) {
           return (setFromDictionary(a[col.key], col.key)
             > setFromDictionary(b[col.key], col.key)) ? 1 : -1
         }
