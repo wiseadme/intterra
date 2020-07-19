@@ -1,0 +1,37 @@
+<div class="table">
+  <div class="table__tools">
+    <div class="table__filters">
+      <table-filter
+        v-for="(filter,i) in filters"
+        :key="i"
+        :filter="filter"
+        @click="addFilter(filter)"
+      />
+    </div>
+  </div>
+  <div class="table__cols">
+    <table-column
+      v-for="col in tableCols"
+      :key="col.title"
+      :col="col"
+      @sort="sortByColumn"
+    />
+  </div>
+  <div class="table__rows">
+    <table-row
+      v-for="(row, i) in tableRows"
+      :key="row.area + i + row.type"
+    >
+      <table-cell
+        v-for="col in tableCols"
+        :key="col.title + i"
+        :col="col"
+        :row="row"
+      />
+    </table-row>
+    <div v-show="showPreloader">
+      <AppPreloader/>
+    </div>
+    <div class="table__error" v-if="!rows">Что то пошло не так</div>
+  </div>
+</div>

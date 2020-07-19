@@ -1,0 +1,56 @@
+.table {
+  &__cols {
+    display: inline-flex;
+    background: $lightGray;
+    height: 40px;
+    width: 100%;
+  }
+
+  &__col {
+    @include flex(flex-start, center);
+    height: 100%;
+    padding: 10px;
+    font-size: 11px;
+
+    @media screen and (max-width: $smTableWidth) {
+      font-size: 9px;
+    }
+
+    &-title {
+      position: relative;
+      cursor: pointer;
+    }
+  }
+}
+
+.sortable {
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 0;
+    height: 0;
+    top: calc(50% - 3px);
+    left: 120%;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 6px solid $gray
+  }
+}
+
+.sorted {
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 0;
+    height: 0;
+    top: calc(50% - 3px);
+    left: 120%;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-bottom: 6px solid $blue
+  }
+}
+
+

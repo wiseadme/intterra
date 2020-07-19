@@ -1,0 +1,56 @@
+.table {
+  width: 100%;
+
+  &__tools {
+    @include flex(space-between, center);
+    width: 100%;
+    height: 80px;
+  }
+
+  &__filters {
+    @include flex(flex-start, center);
+  }
+
+  &__actions {
+    @include flex(flex-start, center);
+  }
+
+  &__cols {
+    display: inline-flex;
+    background: $lightGray;
+    height: 40px;
+    width: 100%;
+  }
+
+  &__rows {
+    position: relative;
+    width: 100%;
+    height: calc(100vh - #{$pageHeader} - 200px);
+    overflow-y: auto;
+  }
+
+  &__error {
+    @include flex(center, center);
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    color: $gray;
+    font-size: 12px;
+  }
+
+  &__preloader {
+    @include flex(center, center);
+    position: absolute;
+    z-index: 2;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    color: $gray;
+    font-size: 12px;
+    background: rgba(255, 255, 255, .4);
+  }
+}

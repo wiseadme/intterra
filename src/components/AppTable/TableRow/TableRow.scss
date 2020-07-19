@@ -1,0 +1,6 @@
+.table {
+  &__row {
+    @include flex(center, center);
+    border-bottom: 1px solid $lightGray;
+  }
+}

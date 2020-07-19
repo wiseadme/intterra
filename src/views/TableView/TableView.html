@@ -1,0 +1,11 @@
+<div class="table-view">
+  <div class="table-wrap">
+    <h1 class="table-head">{{ `Операции на поле ${$route.params.id}` }}</h1>
+    <app-table
+      :filters="filters"
+      :cols="cols"
+      :rows="rows"
+      @filter="fetchFilteredOperations"
+    />
+  </div>
+</div>

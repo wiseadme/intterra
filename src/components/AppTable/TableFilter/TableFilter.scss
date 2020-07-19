@@ -1,0 +1,19 @@
+.table {
+  &__filter {
+    display: block;
+    padding: 10px 0;
+    text-transform: uppercase;
+    margin-right: 15px;
+    font-size: 11px;
+    cursor: pointer;
+    user-select: none;
+
+    &-label {
+      cursor: pointer;
+    }
+
+    @media screen and (max-width: $smTableWidth) {
+      font-size: 9px;
+    }
+  }
+}

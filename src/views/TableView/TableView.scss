@@ -1,0 +1,19 @@
+.table-view {
+  padding: 0 80px;
+  height: 100%;
+}
+
+.table-wrap {
+  height: 100%;
+  padding: 20px;
+  box-shadow: $shadow;
+  max-width: $tableWidth;
+  margin: 0 auto;
+  overflow: hidden;
+  background: $white;
+}
+
+.table-head {
+  font-size: 30px;
+  font-weight: 600;
+}

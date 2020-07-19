@@ -1,0 +1,56 @@
+.accent {
+  font-size: 13px;
+  @media screen and (max-width: $smTableWidth) {
+    font-size: 11px;
+  }
+}
+
+.checked {
+  color: $blue
+}
+
+.excellent,
+.satisfactorily,
+.badly,
+.none {
+  padding: 10px 30px;
+  position: relative;
+
+  &:before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 10px;
+    border-radius: 5px;
+  }
+}
+
+.excellent {
+  &:before {
+    background: $green;
+  }
+}
+
+.satisfactorily {
+  &:before {
+    background: $yellow;
+  }
+}
+
+.badly {
+  &:before {
+    background: $red;
+  }
+}
+
+.none {
+  color: #acacac;
+
+  &:before {
+    background: $lightGray;
+  }
+}
