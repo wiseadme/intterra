@@ -6,7 +6,6 @@ import Vue from 'vue'
 import { VNode } from 'vue/types'
 
 export default Vue.extend({
-
   name: 'TableFilter',
   props: {
     filter: Object

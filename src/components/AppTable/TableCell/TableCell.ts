@@ -58,12 +58,13 @@ export default Vue.extend({
 
     iconClasses(): Record<string, boolean> {
       const { row, col } = this
+      let classes = {}
       if (col.icon) {
-        return {
-          [Culture[row[col.key]].toLowerCase()]: true
+        classes = {
+          ...classes, [Culture[row[col.key]].toLowerCase()]: true
         }
       }
-      return {}
+      return classes
     },
 
     textClasses(): Record<string, boolean> {
@@ -75,14 +76,15 @@ export default Vue.extend({
       if (col.indicator && !Assessment[row[col.key]]) {
         classes = { ...classes, none: true }
       }
-      classes = { ...classes, accent: col.accent }
-      return classes
+      return { ...classes, accent: col.accent }
     }
   },
 
   render(h): VNode {
     const content = this.contentWrap
-    if (this.cellIcon) content.children!.push(this.cellIcon)
+    if (this.cellIcon) {
+      content.children!.push(this.cellIcon)
+    }
     content.children!.push(this.cellText)
     return h('div', {
       staticClass: 'table__cell',

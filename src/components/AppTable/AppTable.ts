@@ -36,8 +36,6 @@ export default class AppTable extends Vue {
   @Prop() cols!: Column[]
   @Prop() filters!: Filter[]
   @Prop() rows!: Operation[]
-  @Prop() icons!: object
-  @Prop() indicators!: object
 
   tableRows: object[]
   tableCols: Column[]
